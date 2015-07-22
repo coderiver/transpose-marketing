@@ -1,7 +1,14 @@
 //header
 .header
 	padding: 37px 0 35px
+	background: #FFF
 	border-bottom: 1px solid #aaa9a9
+	&.is-fixed
+		position: fixed
+		top: 0
+		left: 0
+		right: 0
+		z-index: 2
 	.sign
 		margin-left: 15px
 	+r(900)
@@ -461,3 +468,5 @@
 				margin-bottom: 10px
 		.sign
 			margin-top: 20px
+		.logo
+			margin: 0 auto

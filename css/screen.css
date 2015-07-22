@@ -53,7 +53,8 @@ blockquote small span { font-family: "pt-sans", Arial, sans-serif; }
 
 .l-center { max-width: 963px; }
 
-.header { padding: 37px 0 35px; border-bottom: 1px solid #aaa9a9; }
+.header { padding: 37px 0 35px; background: white; border-bottom: 1px solid #aaa9a9; }
+.header.is-fixed { position: fixed; top: 0; left: 0; right: 0; z-index: 2; }
 .header .sign { margin-left: 15px; }
 @media only screen and (max-width: 900px) { .header { padding: 20px 0; text-align: center; } }
 @media only screen and (max-width: 600px) { .header .sign { display: none; } }
@@ -191,4 +192,5 @@ blockquote small span { font-family: "pt-sans", Arial, sans-serif; }
   .footer .sign { margin-top: 40px; } }
 @media only screen and (max-width: 600px) { .footer__list { display: block; text-align: center; padding-right: 0; margin-bottom: 20px; }
   .footer__link.is-small { display: block; margin-bottom: 10px; }
-  .footer .sign { margin-top: 20px; } }
+  .footer .sign { margin-top: 20px; }
+  .footer .logo { margin: 0 auto; } }
