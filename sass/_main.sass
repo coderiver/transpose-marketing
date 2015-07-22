@@ -4,13 +4,36 @@
 	border-bottom: 1px solid #aaa9a9
 	.sign
 		margin-left: 15px
+	+r(900)
+		padding: 20px 0
+		text-align: center
+	+r(600)
+		.sign
+			display: none
 
 .logo
+	display: block
 	float: left
+	img
+		max-width: 100%
+	+r(900)
+		float: none
+		display: inline-block
+		max-width: 200px
+	+r(600)
+		float: left
+		display: block
 
 .nav
+	position: relative
 	float: right
 	font-size: 0
+	+r(900)
+		float: none
+		margin: 10px 0
+	+r(600)
+		+clr
+
 
 .menu
 	display: inline-block
@@ -19,11 +42,100 @@
 	+clr
 	&__list
 		float: left
-		padding: 0 15px
+		&.is-active
+			a
+				&:before
+					display: block
 		a
+			position: relative
+			padding: 10px 15px
 			color: #4E4E4E
+			&:before
+				display: none
+				content: ""
+				position: absolute
+				bottom: 2px
+				left: 50%
+				width: 0
+				height: 0
+				border: 2px solid #4E4E4E
+				margin-left: -2px
+				border-radius: 50%
 			&:hover
 				text-decoration: underline
+	+r(900)
+		display: block
+		margin: 15px 0 25px
+		&__list
+			float: none
+			display: inline-block
+	+r(600)
+		position: absolute
+		padding: 15px 0
+		top: 81px
+		left: -15px
+		right: -15px
+		margin: 0
+		background: rgba(#5C6173, 0.8)
+		visibility: hidden
+		+opacity(0)
+		+transition(all 0.2s ease)
+		&.is-active
+			visibility: visible
+			+opacity(1)
+		&__list
+			display: block
+			margin: 10px 0
+			a
+				display: block
+				color: #fff
+				padding: 5px 0
+			&.is-active
+				a
+					&:before
+						display: none
+
+.btn-menu
+	display: none
+	float: right
+	width: 50px
+	height: 50px
+	background: none
+	font-size: 0
+	+tr(background .2s)
+	&.is-active
+		i
+			background: none
+			+transform(translateX(4px))
+			&:before
+				+transform(rotateZ(45deg))
+			&:after
+				+transform(rotateZ(-45deg))
+	i
+		display: inline-block
+		vertical-align: middle
+		position: relative
+		height: 2px
+		width: 26px
+		background: #4E4E4E
+		+tr(transform .2s)
+		&:before,
+		&:after
+			content: ""
+			position: absolute
+			left: 0
+			height: 2px
+			width: 26px
+			background: #4E4E4E
+			+tr(transform .2s)
+			+transform-origin(left)
+		&:before
+			top: -9px
+		&:after
+			bottom: -9px
+	+r(600)
+		display: block
+
 
 .sign
 	display: inline-block
@@ -35,8 +147,13 @@
 	border-radius: 3px
 	line-height: 1
 	+sans
+	+transition(all 0.2s ease)
 	&:hover
+		background: #5C6173
+		border-color: #5C6173
+		color: #fff
 		.sign_ico
+			color: #fff
 			+transform(translateX(5px))
 	&_ico
 		display: inline-block
@@ -70,6 +187,8 @@
 		border-color: #FFF
 		.sign_ico
 			color: #FFF
+		&:hover
+			border-color: #5C6173
 
 .reasons
 	padding: 55px 0
@@ -96,6 +215,11 @@
 			width: 50%
 			padding-bottom: 55px
 			max-width: 350px
+	+r(768)
+		&__item
+			display: block
+			width: 100%
+			margin: 0 auto
 
 .info
 	padding: 130px 0
@@ -114,11 +238,18 @@
 	&__item
 		display: inline-block
 		margin-bottom: 53px
+		max-width: 100%
 		&:first-child
 			margin-right: 40px
 	+r(1024)
 		float: none
 		text-align: center
+	+r(600)
+		&__item
+			display: block
+			margin: 0 auto 53px
+			&:first-child
+				margin-right: auto
 
 .case
 	+clr
@@ -135,6 +266,7 @@
 		p
 			overflow: hidden
 	&__template
+		display: block
 		float: right
 		width: 30%
 		max-width: 174px
@@ -161,3 +293,171 @@
 	.man_ico
 		float: left
 		margin-right: 15px
+	+r(768)
+		&__el
+			font-size: 25px
+	+r(600)
+		&__item,
+		&__template
+			float: none
+			width: 100%
+		&__item
+			max-width: inherit
+		&__template
+			max-width: 300px
+			margin: 50px auto 0
+
+.try
+	min-height: 365px
+	margin-bottom: 65px
+	background: #ECECEC url(../img/fox2.jpg) top left no-repeat
+	-webkit-background-size: cover
+	-o-background-size: cover
+	background-size: cover
+	background-position: 0 50%
+	&__in
+		float: right
+		width: 60%
+		padding: 75px 0 25px
+		text-align: right
+		color: #464646
+		font-size: 18px
+	&__ttl
+		margin-bottom: 20px
+		font-size: 36px
+		color: #5C6173
+		+sans
+	&__txt
+		line-height: 1.2
+	.sign
+		margin-top: 45px
+		padding: 12px 65.5px 9px
+		background: #5C6173
+		color: #fff
+		.sign_ico
+			color: #fff
+		&:hover
+			background: none
+			color: #5C6173
+			.sign_ico
+				color: #5C6173
+	+r(768)
+		background: #ECECEC
+		&__in
+			float: none
+			width: 100%
+			padding-bottom: 55px
+			text-align: center
+
+
+.more
+	margin-bottom: 105px
+	&__ttl
+		max-width: 740px
+		margin: 0 auto
+		text-align: center
+		font-size: 36px
+		color: #5C6173
+		+sans
+	.item-wrap
+		margin-top: 53px
+
+.item-wrap
+	font-size: 0
+	.item
+		display: inline-block
+		width: 33.33%
+		margin-bottom: 20px
+		padding: 0 7.5px
+		text-align: center
+		vertical-align: top
+		&__row
+			margin: 0 -7.5px
+		&__img
+			height: 270px
+			margin-bottom: 18px
+			+cover
+		&__txt
+			font-size: 24px
+			color: #666
+			+sans
+	+r(1024)
+		text-align: center
+		.item
+			width: 50%
+			max-width: 350px
+	+r(768)
+		.item
+			display: block
+			width: 100%
+			margin: 0 auto 20px
+
+.footer
+	padding: 50px 0 35px
+	background: #4E4E4E
+	+sans
+	&__row
+		margin-bottom: 50px
+		+clr
+		&:last-child
+			margin-bottom: 0
+	&__bl
+		float: left
+		&:last-child
+			float: right
+		&.is-wrap
+			font-size: 0
+		&.is-copy
+			margin-top: 20px
+			font-size: 14px
+			color: #868686
+	&__list
+		display: inline-block
+		padding-right: 40px
+		vertical-align: top
+		line-height: 1.6
+		&.is-white
+			.footer__link
+				color: #FFF
+	&__link
+		font-size: 18px
+		color: #868686
+		&:hover
+			text-decoration: underline
+		&.is-small
+			padding: 0 8px
+			font-size: 14px
+			text-decoration: underline
+			&:hover
+				text-decoration: none
+	.sign
+		padding: 12px 65.5px 9px
+		color: #FFF
+		background: none
+		border-color: #FFF
+		.sign_ico
+			color: #FFF
+	+r(900)
+		text-align: center
+		&__bl
+			float: none
+			&:last-child
+				float: none
+		&__list
+			text-align: left
+		.logo
+			float: none
+		.sign
+			margin-top: 40px
+	+r(600)
+		&__list
+			display: block
+			text-align: center
+			padding-right: 0
+			margin-bottom: 20px
+		&__link
+			&.is-small
+				display: block
+				margin-bottom: 10px
+		.sign
+			margin-top: 20px
