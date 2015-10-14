@@ -1,0 +1,219 @@
+//header
+.header
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	min-width: 320px
+	padding: 37px 0 35px
+	background: #FFF
+	border-bottom: 1px solid #aaa9a9
+	z-index: 2
+	&.is-fixed
+		position: fixed
+		background: #FFF
+	&.is-builder
+		background: none
+		padding: 10px 0
+		border-bottom: none
+		.menu
+			a
+				color: #fff
+				&:before
+					border-color: #FFF
+		.nav
+			margin-top: 11px
+			+lato-l
+		.sign
+			padding: 10px 15px
+			color: #eb4e50
+			background: #fff
+			border: none
+			border-radius: 0
+			+lato-l
+			&:hover
+				.sign_ico
+					color: #eb4e50
+		.sign_ico
+			color: #eb4e50
+		&.is-fixed
+			background: #FFF
+	.sign
+		margin-left: 15px
+	+r(900)
+		padding: 15px 0 0
+		text-align: center
+		.sign
+			display: none
+	+r(600)
+		padding: 15px 0
+
+.logo
+	display: block
+	float: left
+	&.is-small
+		float: none
+		margin-bottom: 20px
+		a
+			display: inline-block
+			+svg(logo-small, 30, 30)
+	img
+		max-width: 100%
+	+r(900)
+		float: none
+		display: inline-block
+		max-width: 200px
+	+r(600)
+		float: left
+		display: block
+
+.nav
+	position: relative
+	float: right
+	font-size: 0
+	+r(900)
+		float: none
+	+r(600)
+		+clr
+
+
+.menu
+	display: inline-block
+	font-size: 18px
+	vertical-align: middle
+	+clr
+	&__list
+		float: left
+		&.is-active
+			a
+				&:before
+					display: block
+		a
+			position: relative
+			padding: 10px 15px
+			color: #4E4E4E
+			&:before
+				display: none
+				content: ""
+				position: absolute
+				bottom: 2px
+				left: 50%
+				width: 0
+				height: 0
+				border: 2px solid #4E4E4E
+				margin-left: -2px
+				border-radius: 50%
+			&:hover
+				text-decoration: underline
+	+r(900)
+		display: block
+		margin: 15px 0 25px
+		&__list
+			float: none
+			display: inline-block
+	+r(600)
+		position: absolute
+		padding: 15px 0
+		top: 60px
+		left: -15px
+		right: -15px
+		margin: 0
+		background: rgba(#5C6173, 0.8)
+		visibility: hidden
+		+opacity(0)
+		+transition(all 0.2s ease)
+		&.is-active
+			visibility: visible
+			+opacity(1)
+		&__list
+			display: block
+			margin: 10px 0
+			a
+				display: block
+				color: #fff
+				padding: 5px 0
+			&.is-active
+				a
+					&:before
+						display: none
+
+.btn-menu
+	display: none
+	float: right
+	width: 35px
+	height: 35px
+	margin-top: 5px
+	background: none
+	font-size: 0
+	+tr(background .2s)
+	&.is-active
+		i
+			background: none
+			+transform(translateX(4px))
+			&:before
+				+transform(rotateZ(45deg))
+			&:after
+				+transform(rotateZ(-45deg))
+	i
+		display: inline-block
+		vertical-align: middle
+		position: relative
+		height: 2px
+		width: 26px
+		background: #4E4E4E
+		+tr(transform .2s)
+		&:before,
+		&:after
+			content: ""
+			position: absolute
+			left: 0
+			height: 2px
+			width: 26px
+			background: #4E4E4E
+			+tr(transform .2s)
+			+transform-origin(left)
+		&:before
+			top: -9px
+		&:after
+			bottom: -9px
+	+r(600)
+		display: block
+
+
+.sign
+	display: inline-block
+	padding: 12px 20px 9px
+	font-size: 18px
+	color: #4E4E4E
+	border: 1px solid #4E4E4E
+	vertical-align: middle
+	border-radius: 3px
+	line-height: 1
+	+sans
+	+tr(0.2s)
+	&:hover
+		background: #5C6173
+		border-color: #5C6173
+		color: #fff
+		.sign_ico
+			color: #fff
+			+transform(translateX(5px))
+	&_ico
+		display: inline-block
+		margin-left: 5px
+		font-size: 13px
+		color: #4E4E4E
+		vertical-align: 1px
+		+transition(transform 0.2s ease)
+	&.is-red
+		padding: 10px 15px
+		font-size: 18px
+		background: none
+		color: #eb4e50
+		border: 2px solid #eb4e50
+		+lato
+		&:hover
+			color: darken(#EB4E50, 10%)
+			border-color: darken(#EB4E50, 10%)
+		.sign_ico
+			color: #eb4e50

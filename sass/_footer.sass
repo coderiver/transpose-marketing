@@ -1,0 +1,140 @@
+.footer
+	padding: 50px 0 35px
+	background: #4E4E4E
+	+sans
+	&.is-builder
+		background-color: #5d6274
+		.sign
+			position: absolute
+			top: 0
+			right: 0
+			margin-top: 0
+			padding: 10px 15px
+			border-width: 2px
+			+lato-l
+		.footer__list
+			display: block
+			text-align: left
+			line-height: 1.35
+		.footer__link
+			font-size: 15px
+	&__row
+		position: relative
+		margin-bottom: 50px
+		+clr
+		&:last-child
+			margin-bottom: 0
+	&__bl
+		float: left
+		&.onright
+			float: right
+		&.is-wrap
+			font-size: 0
+		&.is-copy
+			margin-top: 20px
+			font-size: 14px
+			color: #868686
+	&__el
+		width: 272px
+		padding: 20px 20px 15px
+		background-color: #7d8190
+		+lato-l
+	&__list
+		display: inline-block
+		padding-right: 40px
+		vertical-align: top
+		line-height: 1.6
+		&.is-white
+			.footer__link
+				color: #FFF
+	&__link
+		font-size: 18px
+		color: #868686
+		&:hover
+			text-decoration: underline
+		&.is-small
+			padding: 0 8px
+			font-size: 14px
+			text-decoration: underline
+			&:hover
+				text-decoration: none
+	&__credit
+		position: absolute
+		right: 0
+		bottom: 0
+		text-align: right
+		font-size: 10px
+		color: #7B818E
+		line-height: 1.6
+		+lato
+		a
+			display: inline-block
+			margin-left: 10px
+			color: #7B818E
+			&:hover
+				text-decoration: underline
+	.sign
+		padding: 12px 65.5px 9px
+		color: #FFF
+		background: none
+		border-color: #FFF
+		.sign_ico
+			color: #FFF
+	+r(900)
+		text-align: center
+		&.is-builder
+			text-align: left
+		&__bl
+			float: none
+			&:last-child
+				float: none
+		&__list
+			text-align: left
+		.logo
+			float: none
+		.sign
+			margin-top: 40px
+	+r(768)
+		&.is-builder
+			.sign
+				display: none
+	+r(600)
+		&.is-builder
+			padding: 40px 0 70px
+			.logo
+				margin: 0 0 20px
+		&__el
+			margin: 0 auto
+		&__credit
+			position: static
+			display: block
+			text-align: center
+			margin-top: 20px
+		&__list
+			display: block
+			text-align: center
+			padding-right: 0
+			margin-bottom: 20px
+		&__link
+			&.is-small
+				display: block
+				margin-bottom: 10px
+		.sign
+			margin-top: 20px
+		.logo
+			margin: 0 auto
+
+.social
+	margin-top: 20px
+	font-size: 0
+	&__li
+		display: inline-block
+		margin: 0 5px
+		&:first-child
+			margin-left: 0
+	a
+		font-size: 20px
+		color: #FFF
+		+tr(0.2s)
+		&:hover
+			color: rgba(#fff, 0.8)

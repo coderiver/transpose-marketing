@@ -1,0 +1,265 @@
+.toparea
+	padding: 200px 0 150px
+	background-image: url(../img/svg/toparea-bg.svg)
+	background-color: #EC4F51
+	+cover
+	&__bl
+		text-align: center
+		font-size: 24px
+		color: #fff
+		line-height: 1.22
+		+lato-l
+		p
+			padding: 0 46px
+	&__frame
+		margin-bottom: 10px
+		padding: 42px 26px
+		text-align: center
+		color: #fff
+		font-size: 72px
+		line-height: 1.2
+		border: 2px solid #fff
+		+lato-l
+	&__login
+		display: none
+		text-align: center
+		margin-top: 60px
+		.sign
+			margin-bottom: 10px
+			padding: 10px 15px
+			color: #eb4e50
+			background: #fff
+			border: none
+			border-radius: 0
+			+lato-l
+			&:hover
+				.sign_ico
+					color: #eb4e50
+		.sign_ico
+			color: #eb4e50
+	&__link
+		font-size: 18px
+		line-height: 1.2
+		+lato-l
+		a
+			color: #FFF
+	+r(768)
+		padding-bottom: 60px
+		&__login
+			display: block
+	+r(600)
+		&__bl
+			font-size: 18px
+		&__frame
+			font-size: 36px
+
+.bl-title
+	max-width: 500px
+	text-align: center
+	margin: 0 auto 10px
+	color: #5e676b
+	font-size: 24px
+	font-weight: 500
+	line-height: 1.22
+	+lato
+	+r(600)
+		font-size: 18px
+
+.bl-subtitle
+	max-width: 500px
+	margin: 0 auto 25px
+	text-align: center
+	font-size: 15px
+	color: #5e676b
+	line-height: 1.35
+	+lato-l
+	+r(600)
+		font-size: 12px
+
+.simpleblock
+	margin: 40px 0 20px
+	text-align: center
+	color: #5e676b
+	img
+		max-width: 100%
+
+.imgblock
+	margin: 40px 0 20px
+	&__wrap
+		text-align: center
+		font-size: 0
+	&__el
+		display: inline-block
+		width: 25%
+		max-width: 220px
+		margin-bottom: 20px
+		padding: 0 5px
+		text-align: center
+		vertical-align: top
+		font-size: 12px
+		color: #BABEC1
+		+lato-l
+		img
+			max-width: 100%
+		p
+			padding: 0 5px
+	+r(768)
+		&__el
+			width: 33.33%
+	+r(600)
+		&__el
+			width: 50%
+
+.blockquote
+	max-width: 540px
+	margin: 40px auto 20px
+	text-align: center
+	img
+		width: 128px
+		height: 128px
+		border-radius: 50%
+	&__quote
+		margin-bottom: 5px
+		padding: 0 20px
+		color: #5e676b
+		font-size: 24px
+		line-height: 1.22
+		+lato-li
+	&__name
+		font-size: 15px
+		color: #adb0af
+		line-height: 1.35
+		+lato-li
+		a
+			text-decoration: underline
+			color: #a8acae
+			+lato
+			&:hover
+				text-decoration: none
+	+r(600)
+		&__quote
+			font-size: 18px
+		&__name
+			font-size: 12px
+
+.sign-bl
+	margin: 40px 20px
+	text-align: center
+
+.cta
+	display: inline-block
+	width: 170px
+	padding: 8px
+	background-color: #eb4e50
+	color: #FFF
+	font-size: 18px
+	line-height: 1.25
+	+lato-l
+	+tr(0.2s)
+	&:hover
+		background-color: darken(#eb4e50, 10%)
+
+.interstitial
+	position: relative
+	margin: 20px 0 40px
+	padding: 55px 0
+	background-image: url(../img/map.jpg)
+	background-repeat: no-repeat
+	+cover
+	&:before
+		content: ""
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background-color: rgba(0, 0, 0, 0.3)
+	&__bl
+		position: relative
+		padding: 55px 45px
+		border: 2px solid #fff
+		text-align: center
+		color: #fff
+		font-size: 48px
+		line-height: 1.2
+		+lato-l
+	+r(600)
+		&__bl
+			padding: 24px 23px 35px
+			font-size: 24px
+			&.is-one
+				padding: 40px 45px
+				font-size: 36px
+
+.pricing
+	margin: 40px 0 46px
+	&__wrap
+		max-width: 870px
+		margin: 0 auto
+		text-align: center
+		font-size: 0
+	&__bl
+		display: inline-block
+		max-width: 295px
+		width: 33.33%
+		margin-bottom: 20px
+		padding: 0 10px
+		vertical-align: top
+		&:nth-last-child(n+4), &:nth-last-child(n+4) ~ .pricing__bl
+			width: 25%
+		&.is-prime
+			.pricing__head
+				color: #e95052
+			.pricing__footer
+				background-color: #e95052
+		&.is-enterprise
+			.pricing__head
+				color: #5e676b
+			.pricing__footer
+				background-color: #5e676b
+	&__in
+		position: relative
+		min-height: 344px
+		text-align: center
+		font-size: 12px
+		background-color: #fff
+		box-shadow: 0 1px 5px 0 rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.12)
+		cursor: pointer
+		+lato-l
+		+tr(0.2s)
+		&:hover
+			box-shadow: 0 3px 5px -1px rgba(0,0,0,.2),0 5px 8px 0 rgba(0,0,0,.14),0 1px 14px 0 rgba(0,0,0,.12)
+	&__head
+		margin-bottom: 20px
+		padding: 12px 10px 9px
+		font-size: 18px
+		color: #5d6274
+		line-height: 22px
+		border-bottom: 1px solid #f1f1ef
+		+lato-i
+	&__body
+		padding-bottom: 62px
+	&__list
+		max-width: 172px
+		margin: 0 auto
+		li
+			margin-bottom: 7px
+	&__footer
+		position: absolute
+		left: 0
+		right: 0
+		bottom: 0
+		padding: 20px 10px
+		font-size: 18px
+		background-color: #5d6274
+		color: #FFF
+		line-height: 22px
+		+lato-i
+	+r(768)
+		.pricing__bl,
+		.pricing__bl:nth-last-child(n+4), .pricing__bl:nth-last-child(n+4) ~ .pricing__bl
+			width: 50%
+	+r(600)
+		.pricing__bl,
+		.pricing__bl:nth-last-child(n+4), .pricing__bl:nth-last-child(n+4) ~ .pricing__bl
+			width: 100%

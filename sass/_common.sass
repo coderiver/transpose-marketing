@@ -50,6 +50,10 @@
 +font(pt-serif, pt-serif)
 +font(pt-sans, pt-sans)
 +font(pt-sans-italic, pt-sans-italic)
++font(lato, lato)
++font(lato-light, lato-light)
++font(lato-lightitalic, lato-lightitalic)
++font(lato-italic, lato-italic)
 
 =serif
 	font-family: "pt-serif", Georgia, serif
@@ -57,11 +61,21 @@
 	font-family: "pt-sans", Arial, sans-serif
 =italic
 	font-family: "pt-sans-italic", Arial, sans-serif
+=lato
+	font-family: "lato", Arial, sans-serif
+=lato-l
+	font-family: "lato-light", Arial, sans-serif
+=lato-li
+	font-family: "lato-lightitalic", Arial, sans-serif
+=lato-i
+	font-family: "lato-italic", Arial, sans-serif
 
 body
 	font-size: 12px
 	line-height: 1.4
 	+serif
+	&.is-gray
+		background-color: #f2f1f0
 
 a
 	text-decoration: none
