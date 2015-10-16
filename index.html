@@ -7,26 +7,29 @@
 	<meta name="format-detection" content="telephone=no">
 	<!-- theme color for android 5.0 -->
 	<meta name="theme-color" content="#fff">
+	<link rel="stylesheet" media="all" href="css/font-awesome.min.css" >
 	<link rel="stylesheet" media="all" href="css/screen.css" >
 	<!--[if IE]><script src="js/html5shiv.js"></script><![endif]-->
 </head>
 <body>
 <!-- BEGIN  out-->
 <div class="out">
-	<header class="header is-fixed">
+	<header class="header js-fix">
 		<div class="l">
-			<a href="#" class="logo">
-				<img src="img/logo.png" alt="Transpose">
-			</a>
-			<div class="nav js-parent">
-				<ul class="menu js-menu">
+			<a href="#" class="logo"><span>Transpose</span></a>
+			<button class="btn-menu js-open-menu" type="button"><i class="fa fa-caret-down"></i></button>
+			<div class="nav js-menu">
+				<i class="fa fa-times js-close"></i>
+				<ul class="menu">
 					<li class="menu__list is-active"><a href="#">Features</a></li>
 					<li class="menu__list"><a href="#">Pricing</a></li>
 					<li class="menu__list"><a href="#">About Us</a></li>
 					<li class="menu__list"><a href="#">Login</a></li>
 				</ul>
-				<a href="#" class="sign">Sign up for free<i class="sign_ico">&#8594;</i></a>
-				<button class="btn-menu js-toggle-menu" type="button"><i></i></button>
+				<a href="#" class="sign is-white-blue">Sign up for free<i class="sign_ico">&#8594;</i></a>
+				<a href="#" class="logo">
+					<span>Transpose</span>
+				</a>
 			</div>
 		</div>
 	</header>
@@ -184,9 +187,7 @@
 				</div>
 			</div>
 			<div class="footer__row">
-				<a href="#" class="logo">
-					<img src="img/logo-white.png" alt="Transpose">
-				</a>
+				<a href="#" class="logo"></a>
 				<div class="footer__bl onright is-copy">
 					<div class="footer__copy">
 						<a class="footer__link is-small" href="#">Terms of Service</a>

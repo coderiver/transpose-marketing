@@ -5,63 +5,116 @@
 	left: 0
 	right: 0
 	min-width: 320px
-	padding: 37px 0 35px
+	padding: 20px 0
 	background: #FFF
 	border-bottom: 1px solid #aaa9a9
 	z-index: 2
+	+transition(background 0.1s)
+	&.is-builder
+		background: none
+		padding: 20px 0
+		border-bottom: none
+		.menu a
+			color: #fff
+			&:before
+				border-color: #FFF
+		.nav
+			margin-top: 7px
+		.btn-menu
+			.fa
+				color: #FFF
+		.logo
+			&:before
+				display: none
+			&:after
+				display: block
+		&.is-fixed
+			.menu a
+				color: #4E4E4E
+				&:before
+					border-color: #4E4E4E
+			.sign
+				border: 1px solid #4E4E4E
+			.logo
+				&:before
+					display: block
+				&:after
+					display: none
+			.btn-menu
+				.fa
+					color: #000
 	&.is-fixed
 		position: fixed
 		background: #FFF
-	&.is-builder
-		background: none
-		padding: 10px 0
-		border-bottom: none
-		.menu
-			a
-				color: #fff
-				&:before
-					border-color: #FFF
-		.nav
-			margin-top: 11px
-			+lato-l
-		.sign
-			padding: 10px 15px
-			color: #eb4e50
-			background: #fff
-			border: none
-			border-radius: 0
-			+lato-l
-			&:hover
-				.sign_ico
-					color: #eb4e50
-		.sign_ico
-			color: #eb4e50
-		&.is-fixed
-			background: #FFF
+		border-bottom: 1px solid #aaa9a9
+		.logo
+			&:after
+				display: none
+		.btn-menu
+			.fa
+				color: #000
 	.sign
 		margin-left: 15px
 	+r(900)
-		padding: 15px 0 0
+		padding: 15px 0
 		text-align: center
-		.sign
-			display: none
+		.nav
+			.logo
+				&:before
+					display: none
+				&:after
+					display: block
+		&.is-builder
+			.nav
+				margin-top: 0
+				.logo
+					&:before
+						display: none
+					&:after
+						display: block
+			&.is-fixed
+				.menu a
+					color: #fff
+					&:before
+						border-color: #fff
+		.btn-menu
+			display: block
 	+r(600)
 		padding: 15px 0
 
+
 .logo
+	position: relative
 	display: block
+	width: 281px
+	height: 51px
 	float: left
+	+hide-text
+	&:before,
+	&:after
+		content: ""
+		width: 100%
+		height: 100%
+		background-repeat: no-repeat
+		-webkit-background-size: contain
+		-o-background-size: contain
+		background-size: contain
+	&:before
+		display: block
+		background-image: url(../img/svg/logo-color.svg)
+	&:after
+		display: none
+		background-image: url(../img/svg/logo.svg)
 	&.is-small
 		float: none
 		margin-bottom: 20px
+		&:before,
+		&:after
+			display: none
 		a
 			display: inline-block
 			+svg(logo-small, 30, 30)
-	img
-		max-width: 100%
 	+r(900)
-		float: none
-		display: inline-block
 		max-width: 200px
 	+r(600)
 		float: left
@@ -71,11 +124,35 @@
 	position: relative
 	float: right
 	font-size: 0
+	+lato-l
+	.fa-times
+		display: none
+		font-size: 18px
+		color: #FFF
+	.logo
+		display: none
+		float: none
+		margin: 120px auto 10px
 	+r(900)
 		float: none
-	+r(600)
-		+clr
-
+		position: absolute
+		padding: 15px 0
+		top: 0
+		left: 0
+		right: 0
+		margin: 0
+		background-color: #5c6173
+		visibility: hidden
+		z-index: 2
+		+opacity(0)
+		+transition(all 0.2s ease)
+		&.is-active
+			visibility: visible
+			+opacity(1)
+		.fa-times
+			display: block
+		.logo
+			display: block
 
 .menu
 	display: inline-block
@@ -107,75 +184,36 @@
 				text-decoration: underline
 	+r(900)
 		display: block
-		margin: 15px 0 25px
-		&__list
-			float: none
-			display: inline-block
-	+r(600)
-		position: absolute
-		padding: 15px 0
-		top: 60px
-		left: -15px
-		right: -15px
-		margin: 0
-		background: rgba(#5C6173, 0.8)
-		visibility: hidden
-		+opacity(0)
-		+transition(all 0.2s ease)
-		&.is-active
-			visibility: visible
-			+opacity(1)
 		&__list
 			display: block
+			float: none
 			margin: 10px 0
 			a
 				display: block
 				color: #fff
 				padding: 5px 0
+				&:hover
+					text-decoration: none
 			&.is-active
+				+lato-b
 				a
+					text-decoration: none
 					&:before
 						display: none
 
+
 .btn-menu
 	display: none
-	float: right
+	float: left
 	width: 35px
 	height: 35px
 	margin-top: 5px
 	background: none
 	font-size: 0
 	+tr(background .2s)
-	&.is-active
-		i
-			background: none
-			+transform(translateX(4px))
-			&:before
-				+transform(rotateZ(45deg))
-			&:after
-				+transform(rotateZ(-45deg))
-	i
-		display: inline-block
-		vertical-align: middle
-		position: relative
-		height: 2px
-		width: 26px
-		background: #4E4E4E
-		+tr(transform .2s)
-		&:before,
-		&:after
-			content: ""
-			position: absolute
-			left: 0
-			height: 2px
-			width: 26px
-			background: #4E4E4E
-			+tr(transform .2s)
-			+transform-origin(left)
-		&:before
-			top: -9px
-		&:after
-			bottom: -9px
+	.fa
+		font-size: 12px
+		color: #000
 	+r(600)
 		display: block
 
@@ -191,6 +229,50 @@
 	line-height: 1
 	+sans
 	+tr(0.2s)
+	&.is-red
+		padding: 10px 15px
+		font-size: 18px
+		background: none
+		color: #eb4e50
+		border: 2px solid #eb4e50
+		+lato
+		&:hover
+			background: none
+			color: darken(#EB4E50, 10%)
+			border-color: darken(#EB4E50, 10%)
+			.sign_ico
+				color: #eb4e50
+		.sign_ico
+			color: #eb4e50
+	&.is-white-red
+		padding: 10px 15px
+		color: #eb4e50
+		background: #fff
+		border-color: #fff
+		border-radius: 0
+		+lato-l
+		&:hover
+			background: #fff
+			color: #eb4e50
+			.sign_ico
+				color: #eb4e50
+		.sign_ico
+			color: #eb4e50
+	&.is-white-blue
+		padding: 10px 15px
+		font-size: 18px
+		background: #fff
+		color: #5c6173
+		border-color: #fff
+		border-radius: 0
+		+lato-l
+		&:hover
+			background: #fff
+			color: #5c6173
+			.sign_ico
+				color: #5c6173
+		.sign_ico
+			color: #5c6173
 	&:hover
 		background: #5C6173
 		border-color: #5C6173
@@ -205,15 +287,3 @@
 		color: #4E4E4E
 		vertical-align: 1px
 		+transition(transform 0.2s ease)
-	&.is-red
-		padding: 10px 15px
-		font-size: 18px
-		background: none
-		color: #eb4e50
-		border: 2px solid #eb4e50
-		+lato
-		&:hover
-			color: darken(#EB4E50, 10%)
-			border-color: darken(#EB4E50, 10%)
-		.sign_ico
-			color: #eb4e50
