@@ -71,6 +71,20 @@
 	+r(600)
 		font-size: 12px
 
+.tapblock
+	position: fixed
+	display: none
+	top: 0
+	padding: 10px
+	background-color: #eb4e50
+	cursor: pointer
+	z-index: 10
+	.logo-ico
+		display: inline-block
+		+svg(logo-small, 20, 20)
+	&.is-visible
+		display: block
+
 .simpleblock
 	margin: 40px 0 20px
 	text-align: center
@@ -160,6 +174,7 @@
 	padding: 55px 0
 	background-image: url(../img/map.jpg)
 	background-repeat: no-repeat
+	background-attachment: fixed
 	+cover
 	&:before
 		content: ""
@@ -193,6 +208,10 @@
 		margin: 0 auto
 		text-align: center
 		font-size: 0
+		opacity: 0
+		+transition(opacity 0.3s)
+		&.is-active
+			opacity: 1
 	&__bl
 		display: inline-block
 		max-width: 295px
@@ -233,12 +252,12 @@
 		border-bottom: 1px solid #f1f1ef
 		+lato-i
 	&__body
-		padding-bottom: 62px
+		padding: 0 15px 62px
 	&__list
 		max-width: 172px
 		margin: 0 auto
 		li
-			margin-bottom: 7px
+			margin-bottom: 6px
 	&__footer
 		position: absolute
 		left: 0
@@ -250,11 +269,11 @@
 		color: #FFF
 		line-height: 22px
 		+lato-i
-	+r(768)
-		.pricing__bl,
-		.pricing__bl:nth-last-child(n+4), .pricing__bl:nth-last-child(n+4) ~ .pricing__bl
+	+r(750)
+		.pricing__bl
+			max-width: initial
 			width: 50%
-	+r(600)
+	+r(450)
 		.pricing__bl,
 		.pricing__bl:nth-last-child(n+4), .pricing__bl:nth-last-child(n+4) ~ .pricing__bl
 			width: 100%

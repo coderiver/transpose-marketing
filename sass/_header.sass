@@ -8,7 +8,6 @@
 	padding: 20px 0
 	background: #FFF
 	border-bottom: 1px solid #aaa9a9
-	z-index: 2
 	+transition(background 0.1s)
 	&.is-builder
 		background: none
@@ -28,31 +27,6 @@
 				display: none
 			&:after
 				display: block
-		&.is-fixed
-			.menu a
-				color: #4E4E4E
-				&:before
-					border-color: #4E4E4E
-			.sign
-				border: 1px solid #4E4E4E
-			.logo
-				&:before
-					display: block
-				&:after
-					display: none
-			.btn-menu
-				.fa
-					color: #000
-	&.is-fixed
-		position: fixed
-		background: #FFF
-		border-bottom: 1px solid #aaa9a9
-		.logo
-			&:after
-				display: none
-		.btn-menu
-			.fa
-				color: #000
 	.sign
 		margin-left: 15px
 	+r(900)
@@ -107,6 +81,8 @@
 		background-image: url(../img/svg/logo.svg)
 	&.is-small
 		float: none
+		width: auto
+		height: auto
 		margin-bottom: 20px
 		&:before,
 		&:after
@@ -114,6 +90,11 @@
 		a
 			display: inline-block
 			+svg(logo-small, 30, 30)
+	&.is-white
+		&:before
+			display: none
+		&:after
+			display: block
 	+r(900)
 		max-width: 200px
 	+r(600)
@@ -135,7 +116,7 @@
 		margin: 120px auto 10px
 	+r(900)
 		float: none
-		position: absolute
+		position: fixed
 		padding: 15px 0
 		top: 0
 		left: 0
@@ -143,7 +124,7 @@
 		margin: 0
 		background-color: #5c6173
 		visibility: hidden
-		z-index: 2
+		z-index: 11
 		+opacity(0)
 		+transition(all 0.2s ease)
 		&.is-active
@@ -254,6 +235,7 @@
 		&:hover
 			background: #fff
 			color: #eb4e50
+			border-color: #fff
 			.sign_ico
 				color: #eb4e50
 		.sign_ico
