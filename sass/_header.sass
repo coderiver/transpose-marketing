@@ -6,27 +6,7 @@
 	right: 0
 	min-width: 320px
 	padding: 20px 0
-	background: #FFF
-	border-bottom: 1px solid #aaa9a9
 	+transition(background 0.1s)
-	&.is-builder
-		background: none
-		padding: 20px 0
-		border-bottom: none
-		.menu a
-			color: #fff
-			&:before
-				border-color: #FFF
-		.nav
-			margin-top: 7px
-		.btn-menu
-			.fa
-				color: #FFF
-		.logo
-			&:before
-				display: none
-			&:after
-				display: block
 	.sign
 		margin-left: 15px
 	+r(900)
@@ -38,19 +18,6 @@
 					display: none
 				&:after
 					display: block
-		&.is-builder
-			.nav
-				margin-top: 0
-				.logo
-					&:before
-						display: none
-					&:after
-						display: block
-			&.is-fixed
-				.menu a
-					color: #fff
-					&:before
-						border-color: #fff
 		.btn-menu
 			display: block
 	+r(600)
@@ -74,10 +41,10 @@
 		-o-background-size: contain
 		background-size: contain
 	&:before
-		display: block
+		display: none
 		background-image: url(../img/svg/logo-color.svg)
 	&:after
-		display: none
+		display: block
 		background-image: url(../img/svg/logo.svg)
 	&.is-small
 		float: none
@@ -101,9 +68,11 @@
 		float: left
 		display: block
 
+
 .nav
 	position: relative
 	float: right
+	margin-top: 7px
 	font-size: 0
 	+lato-l
 	.fa-times
@@ -149,7 +118,7 @@
 		a
 			position: relative
 			padding: 10px 15px
-			color: #4E4E4E
+			color: #fff
 			&:before
 				display: none
 				content: ""
@@ -158,7 +127,7 @@
 				left: 50%
 				width: 0
 				height: 0
-				border: 2px solid #4E4E4E
+				border: 2px solid #fff
 				margin-left: -2px
 				border-radius: 50%
 			&:hover
@@ -194,7 +163,7 @@
 	+tr(background .2s)
 	.fa
 		font-size: 12px
-		color: #000
+		color: #fff
 	+r(600)
 		display: block
 
@@ -251,6 +220,7 @@
 		&:hover
 			background: #fff
 			color: #5c6173
+			border-color: transparent
 			.sign_ico
 				color: #5c6173
 		.sign_ico

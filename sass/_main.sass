@@ -1,10 +1,6 @@
 //content
-.content
-	padding-top: 92px
-	+r(900)
-		padding-top: 75px
-
 .manage
+	padding-top: 90px
 	min-height: 515px
 	color: #FFF
 	background: url(../img/fox.jpg) no-repeat
@@ -64,11 +60,18 @@
 .info
 	padding: 130px 0
 	+clr
-	blockquote
+	&__quote
 		float: left
 		max-width: 380px
+		color: #949494
+		font-size: 30px
+		small
+			font-size: 18px
+			+italic
+			span
+				+sans
 	+r(1024)
-		blockquote
+		&__quote
 			float: none
 			max-width: inherit
 			margin-bottom: 50px

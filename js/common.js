@@ -3,7 +3,7 @@ head.ready(function() {
 	function fixedTapButton() {
 		var winWidth	  = $(window).width();
 		var	scroll		  = $(window).scrollTop();
-		var	topareaHeight = $('.toparea').outerHeight();
+		var	topareaHeight = $('.js-area').outerHeight();
 
 		if ( scroll > topareaHeight && winWidth < 769 ) {
 			$('.js-tap').addClass('is-visible');
