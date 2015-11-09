@@ -109,10 +109,12 @@ head.ready(function() {
 	$('.js-open-menu').click(function(e) {
 		e.preventDefault();
 		$(this).parent().find('.js-menu').addClass('is-active');
+		$('body').addClass('is-overflow');
 	});
 
 	$('.js-close').click(function(e) {
 		$(this).parent().removeClass('is-active');
+		$('body').removeClass('is-overflow');
 	});
 
 	// detect the highest block in row
