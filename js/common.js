@@ -97,6 +97,12 @@ head.ready(function() {
 		} else {
 			sliderDestroyDebounce();
 		}
+
+		if ( $(window).width() < 768 &&  $('.js-menu').hasClass('is-active')) {
+			$('body').addClass('is-overflow');
+		} else {
+			$('body').removeClass('is-overflow');
+		}
 	});
 
 	// check onload to activate/deactivate slider
