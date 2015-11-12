@@ -113,9 +113,8 @@ head.ready(function() {
 			var win = $(window),
 				winWidth = $(window).width();
 
-			e.preventDefault();
-
 			if ( winWidth < 800 ) {
+				e.preventDefault();
 				$('.js-menu').addClass('is-active');
 				$('body').addClass('is-overflow');
 			} else {
