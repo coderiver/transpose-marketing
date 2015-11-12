@@ -36,7 +36,7 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
 @font-face { font-family: lato-italic; src: url("fonts/lato-italic.eot"); src: url("fonts/lato-italic.eot?#iefix") format("embedded-opentype"), url("fonts/lato-italic.woff2") format("woff2"), url("fonts/lato-italic.woff") format("woff"), url("fonts/lato-italic.ttf") format("truetype"); font-weight: normal; font-style: normal; }
 body { font-size: 12px; line-height: 1.4; font-family: "pt-serif", Georgia, serif; }
 body.is-gray { background-color: #f2f1f0; }
-body.is-overflow { position: fixed; top: 0; left: 0; right: 0; bottom: 0; overflow: hidden; }
+body.is-overflow { overflow: hidden; }
 
 a { text-decoration: none; }
 
@@ -96,11 +96,12 @@ a { text-decoration: none; }
 .slick-dots button:hover { box-shadow: none; }
 
 .header { position: absolute; top: 0; left: 0; right: 0; min-width: 320px; padding: 20px 0; -moz-transition: background 0.1s; -o-transition: background 0.1s; -webkit-transition: background 0.1s; transition: background 0.1s; }
+.header__logo { float: left; font-size: 0; }
 .header .sign { margin-left: 15px; }
 @media only screen and (max-width: 900px) { .header { padding: 15px 0; text-align: center; } }
 @media only screen and (max-width: 600px) { .header { padding: 15px 0; } }
 
-.logo { position: relative; display: block; width: 281px; height: 51px; float: left; font: 0/0 a; text-shadow: none; color: transparent; }
+.logo { position: relative; display: inline-block; width: 281px; height: 51px; float: left; font: 0/0 a; text-shadow: none; color: transparent; }
 .logo:before, .logo:after { content: ""; width: 100%; height: 100%; background-repeat: no-repeat; -webkit-background-size: contain; -o-background-size: contain; background-size: contain; }
 .logo:before { display: none; background-image: url(../img/svg/logo-color.svg); }
 .logo:after { display: block; background-image: url(../img/svg/logo.svg); }
@@ -114,7 +115,7 @@ a { text-decoration: none; }
 
 .nav { position: relative; float: right; font-size: 0; font-family: "lato-light", Arial, sans-serif; *zoom: 1; }
 .nav:after { content: " "; display: table; clear: both; }
-.nav .fa-times { display: none; font-size: 18px; color: #FFF; }
+.nav .fa-times { display: none; font-size: 18px; color: #FFF; cursor: pointer; }
 .nav .logo { display: none; float: none; margin: 120px auto 10px; }
 @media only screen and (max-width: 900px) { .nav .logo:before { display: none; }
   .nav .logo:after { display: block; } }
@@ -139,9 +140,9 @@ a { text-decoration: none; }
   .menu__list.is-active a { text-decoration: none; }
   .menu__list.is-active a:before { display: none; } }
 
-.btn-menu { display: none; float: left; width: 35px; height: 35px; margin-top: 5px; background: none; font-size: 0; -moz-transition: background 0.2s; -o-transition: background 0.2s; -webkit-transition: background 0.2s; transition: background 0.2s; }
+.btn-menu { display: none; width: 35px; height: 35px; margin-top: 5px; background: none; font-size: 0; vertical-align: middle; -moz-transition: background 0.2s; -o-transition: background 0.2s; -webkit-transition: background 0.2s; transition: background 0.2s; }
 .btn-menu .fa { font-size: 12px; color: #fff; }
-@media only screen and (max-width: 800px) { .btn-menu { display: block; } }
+@media only screen and (max-width: 800px) { .btn-menu { display: inline-block; } }
 
 .sign { display: inline-block; padding: 12px 20px 9px; font-size: 18px; color: #4E4E4E; border: 1px solid #4E4E4E; vertical-align: middle; border-radius: 3px; line-height: 1; font-family: "pt-sans", Arial, sans-serif; -moz-transition: 0.2s; -o-transition: 0.2s; -webkit-transition: 0.2s; transition: 0.2s; }
 .sign.is-red { padding: 10px 15px; font-size: 18px; background: none; color: #eb4e50; border: 2px solid #eb4e50; font-family: "lato", Arial, sans-serif; }

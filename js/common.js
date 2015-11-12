@@ -17,6 +17,7 @@ head.ready(function() {
 	// tap button call menu
 	$('.js-tap').click(function() {
 		$('.js-menu').addClass('is-active');
+		$('body').addClass('is-overflow');
 	});
 
 	// slider constructor
@@ -84,6 +85,13 @@ head.ready(function() {
 		slider.destroy();
 	});
 
+	// check onload to activate/deactivate slider
+	if ( $(window).width() < 768 ) {
+		slider.activate();
+	} else {
+		slider.destroy();
+	}
+
 	$(window).scroll(function() {
 		fixedTapButton();
 	});
@@ -97,27 +105,38 @@ head.ready(function() {
 		} else {
 			sliderDestroyDebounce();
 		}
-
-		if ( $(window).width() < 768 &&  $('.js-menu').hasClass('is-active')) {
-			$('body').addClass('is-overflow');
-		} else {
-			$('body').removeClass('is-overflow');
-		}
 	});
 
-	// check onload to activate/deactivate slider
-	if ( $(window).width() < 768 ) {
-		slider.activate();
-	} else {
-		slider.destroy();
+	// menu
+	function callmenu() {
+		$('.js-open-menu').click(function(e) {
+			var win = $(window),
+				winWidth = $(window).width();
+
+			e.preventDefault();
+
+			if ( winWidth < 800 ) {
+				$('.js-menu').addClass('is-active');
+				$('body').addClass('is-overflow');
+			} else {
+				$('.js-menu').removeClass('is-active');
+				$('body').removeClass('is-overflow');
+			}
+		});
+
+		$(window).resize(function() {
+			var winWidth = $(window).width();
+
+			if ( winWidth > 800 ) {
+				$('body').removeClass('is-overflow');
+				$('.js-menu').removeClass('is-active');
+			}
+		});
 	}
 
-	$('.js-open-menu').click(function(e) {
-		e.preventDefault();
-		$(this).parent().find('.js-menu').addClass('is-active');
-		$('body').addClass('is-overflow');
-	});
+	callmenu();
 
+	// close menu
 	$('.js-close').click(function(e) {
 		$(this).parent().removeClass('is-active');
 		$('body').removeClass('is-overflow');
